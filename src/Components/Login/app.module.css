@@ -1,0 +1,14 @@
+.form_padding{
+    padding: 80px 50px;
+    margin: 0 auto;
+}
+.register{
+    cursor: pointer;
+}
+.login_form{
+    width: 20%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
