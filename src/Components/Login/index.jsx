@@ -8,7 +8,7 @@ const Login = ({ OnAuthState }) => {
                     <div className={`${styles.form_padding} border border-1 `}>
                         <form className=" m-auto">
                             <div className="row g-3  ">
-                                <h2>Login</h2>
+                                <h2>Please Login</h2>
                                 <div className="form-group">
                                     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                                 </div>
