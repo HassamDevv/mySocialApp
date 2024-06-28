@@ -17,8 +17,8 @@ function App() {
 
 
       <Routes>
-        <Route path='/auth' element={<Auth />} />
-        <Route path='/' element={<Home />}>
+        <Route path='/' element={<Auth />} />
+        <Route path='/home' element={<Home />}>
           <Route index element={<Home />} />
 
         </Route>

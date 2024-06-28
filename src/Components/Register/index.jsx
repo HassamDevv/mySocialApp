@@ -1,7 +1,16 @@
 
 import { useState } from "react"
 import styles from "./app.module.css"
+import app from "../../../Firebase"
+import { getDatabase } from "firebase/database"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { getAuth } from "firebase/auth"
+
 const Register = ({ OnAuthState }) => {
+    console.log(app)
+    const db = getDatabase(app)
+    console.log(db)
+    const Auth = getAuth(app)
 
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -46,6 +55,10 @@ const Register = ({ OnAuthState }) => {
             setPassword("");
             setConfirmPassword("");
             setValidationSuccessFully("Register SuccessFully")
+
+            //here user is created
+            createUserWithEmailAndPassword(Auth, email, password)
+            //here user is created
 
 
         }
