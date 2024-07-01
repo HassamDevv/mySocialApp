@@ -9,6 +9,7 @@ const Login = ({ OnAuthState }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [loginValidation, setLoginValidation] = useState([])
+    const [loginError, setLoginError] = useState()
     const navigate = useNavigate()
 
 
@@ -34,7 +35,11 @@ const Login = ({ OnAuthState }) => {
                 console.log("login Successfully")
                 navigate("/home")
             }).catch((err) => {
-                console.log(err.code)
+                if (err.code == "auth/invalid-credential") {
+                    setLoginError("Invalid Credentials")
+                }
+
+
 
             })
 
@@ -48,16 +53,21 @@ const Login = ({ OnAuthState }) => {
                         <form className=" m-auto" onSubmit={OnLogin}>
                             <div className="row g-3  ">
                                 <h2>Please Login</h2>
-                                <ul>
-                                    {
-                                        loginValidation.map((items, key) => {
-                                            return (
-                                                <li key={key}>{items}</li>
-                                            )
+                                {loginError && (  <p className={styles.login_error}>{loginError}</p>)}
+                              
+                                {
+                                    loginValidation.length > 0 && (<ul className="list-unstyled">
+                                        {
+                                            loginValidation.map((items, key) => {
+                                                return (
+                                                    <li key={key}>{items}</li>
+                                                )
 
-                                        })
-                                    }
-                                </ul>
+                                            })
+                                        }
+                                    </ul>)
+                                }
+
                                 <div className="form-group">
                                     <input type="email" value={email} onChange={(e) => { setEmail(e.target.value) }} className="form-control" placeholder="Enter email" />
                                 </div>

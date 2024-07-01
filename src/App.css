@@ -44,3 +44,21 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+@media screen and (max-width :  991px){
+  .banner_circle {
+     
+      width: 160px !Important;
+      height: 160px !Important;
+      
+  }
+  .banner_circle .circle-inner span {
+      font-size: 20px !Important;
+     
+  }
+  }
+
+
+

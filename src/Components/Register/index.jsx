@@ -24,26 +24,15 @@ const Register = ({ OnAuthState }) => {
         const ErrorList = []
         if (!name) {
             ErrorList.push("Please Enter you name")
-
         } if (!email) {
             ErrorList.push("Please Enter Your Email")
-
-
         } if (!password) {
             ErrorList.push("Please enter your password")
-
-
         } if (!confirmPassword) {
             ErrorList.push("Please enter your confirm password")
-
-
-
         }
         else if (password !== confirmPassword) {
             ErrorList.push("Password Not Match")
-
-
-
         }
         setFormValidation(ErrorList)
         console.log(formValidation)
@@ -77,7 +66,7 @@ const Register = ({ OnAuthState }) => {
                         <h2>Register</h2>
                         {validationSuccesfully && <h3 className={styles.register_successfully}>{validationSuccesfully}</h3>}
 
-                        <ul className="list-unstyled" >
+                        {formValidation.length > 0 && (<ul className="list-unstyled" >
 
                             {
                                 formValidation.map((items, key) => {
@@ -88,7 +77,8 @@ const Register = ({ OnAuthState }) => {
 
                                 })
                             }
-                        </ul>
+                        </ul>)}
+
 
                         <div className="form-group">
                             <input type="text" value={name} onChange={(e) => { setName(e.target.value) }} className="form-control" placeholder="Enter Name" />

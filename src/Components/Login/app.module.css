@@ -14,3 +14,11 @@
     transform: translate(-50%, -50%);
    
 }
+.login_form form ul li{
+    color: Red;
+    font-size: 14px;
+}
+.login_error{
+    color: Red;
+    font-size: 14px;
+}

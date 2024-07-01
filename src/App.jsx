@@ -8,6 +8,10 @@ import Auth from './Pages/Auth'
 import Navbar from './Components/Navbar/Index'
 import Home from './Pages/Home'
 import { Routes, Route } from 'react-router-dom'
+import Followers from './Pages/Followers'
+import Following from './Pages/Following'
+import Settings from './Pages/Settings'
+import Layout from './Components/Layout'
 
 function App() {
 
@@ -17,11 +21,16 @@ function App() {
 
 
       <Routes>
-        <Route path='/' element={<Auth />} />
-        <Route path='/home' element={<Home />}>
-          <Route index element={<Home />} />
+        <Route path="/" element={<Auth />} />
+        <Route path="/" element={<Layout />}>
+          <Route path='home' element={<Home />} />
+          <Route path="followers" element={<Followers />} />
+          <Route path="following" element={<Following />} />
+          <Route path="settings" element={<Settings />} />
+
 
         </Route>
+
       </Routes>
 
 
