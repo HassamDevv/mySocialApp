@@ -9,37 +9,47 @@ import { useNavigate } from "react-router-dom"
 
 const Auth = () => {
     const [isRegister, setIsRegiste] = useState(true)
-    
+    const [isUserOnLogedPage, setIsUserOnLogedPage] = useState(true)
+
+
+
     const Auth = getAuth(app)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        onAuthStateChanged(Auth, (user) => {
-            if (!user) {
-                navigate("/")
 
-            } else (
-                navigate("/home")
-            )
-
-        })
-
-    }, [])
 
     const AuthStateChange = () => {
         setIsRegiste(!isRegister)
         console.log("clicked")
     }
 
+    useEffect(() => {
+        onAuthStateChanged(Auth, (user) => {
+            if (user) {
+
+                navigate("/home")
+                setIsUserOnLogedPage(false)
+            } else {
+
+
+            }
+
+        })
+
+    })
+
+
     return (
+
+
 
         <>
             {
-                isRegister ? (< Login OnAuthState={AuthStateChange} />) : (<Register OnAuthState={AuthStateChange} />)
+                isUserOnLogedPage ? (<> {
+
+                    isRegister ? (< Login OnAuthState={AuthStateChange} />) : (<Register OnAuthState={AuthStateChange} />)
+                }</>) : ("Loading...")
             }
-
-
-
 
         </>
     )

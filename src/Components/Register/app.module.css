@@ -28,3 +28,7 @@
     border: 1px solid #417e1f;
     
 }
+.emailAllready{
+    color: red;
+    margin: 0px;
+}

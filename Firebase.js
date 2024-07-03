@@ -7,10 +7,11 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyAVX0lxVzGlccYTxZwZsvsAf6NPmf0VwbE",
   authDomain: "mysocialapp-71268.firebaseapp.com",
+  databaseURL: "https://mysocialapp-71268-default-rtdb.firebaseio.com",
   projectId: "mysocialapp-71268",
   storageBucket: "mysocialapp-71268.appspot.com",
   messagingSenderId: "95488573632",
-  appId: "1:95488573632:web:c93222a157b22378d0ad25"
+  appId: "1:95488573632:web:c93222a157b22378d0ad25",
 };
 
 // Initialize Firebase 

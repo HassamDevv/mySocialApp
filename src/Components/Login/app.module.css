@@ -22,3 +22,9 @@
     color: Red;
     font-size: 14px;
 }
+.signIn_with_google{
+    width: 100%;
+    padding: 6px 15px;
+    margin: 15px 0px;
+    border: 1px solid #000;
+}

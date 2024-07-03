@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Auth />} />
         <Route path="/" element={<Layout />}>
-          <Route path='home' element={<Home />} />
+          <Route path='/home' element={<Home />} />
           <Route path="followers" element={<Followers />} />
           <Route path="following" element={<Following />} />
           <Route path="settings" element={<Settings />} />
